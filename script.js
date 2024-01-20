@@ -4,30 +4,37 @@ let arr = [
   { id: 3, name: 'karen', age: 19, profession: 'admin' },
 ];
 
-// Don't worry about consoling these functions, they are already being called on the button clicks.
-// Please don't change anything in the index.html file.
-
+// Function to print all employees with the profession of developer
 function PrintDeveloper() {
-  //Write your code here , just console.log
+  const developers = arr.filter(employee => employee.profession === 'developer');
+  console.log('Developers:', developers);
 }
 
+// Function to add another employee to the array
 function addData() {
-  //Write your code here, just console.log
+  const newEmployee = { id: 4, name: 'susan', age: 20, profession: 'intern' };
+  arr.push(newEmployee);
+  console.log('Employee Appended:', newEmployee);
 }
 
+// Function to remove employees with the profession of admin
 function removeAdmin() {
-  //Write your code here, just console.log
+  const filteredArr = arr.filter(employee => employee.profession !== 'admin');
+  console.log('Employees without Admins:', filteredArr);
 }
 
+// Function to concatenate another array of employees to the original array
 function concatenateArray() {
-  //Write your code here, just console.log
+  const moreEmployees = [
+    { id: 5, name: 'mike', age: 22, profession: 'developer' },
+    { id: 6, name: 'linda', age: 21, profession: 'admin' }
+  ];
+
+  arr = arr.concat(moreEmployees);
+  console.log('Concatenated Array:', arr);
 }
 
-// Here is an example of how functions work,
-// basically a function is a block of code which can directly access your 'arr' variable since arr is global.
-// If I have a function called consoleArr(), that can directly access arr like this to console it.
-
+// Example function to console.log the array variable
 function consoleArr() {
   console.log('Consoling Array Variable', arr);
-  // Over here I can directly access the variable.
 }
